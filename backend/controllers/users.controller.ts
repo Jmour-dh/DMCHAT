@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import crypto from 'crypto';
+import crypto from "crypto";
 import User from "../models/users.model";
 import ExpiredSessionToken from "../models/expiredSessionToken.model";
 import ResetPassword from "../models/resetPassword.model";
@@ -55,11 +55,9 @@ class UserController {
         "Erreur lors de la récupération de l'utilisateur par ID :",
         error
       );
-      res
-        .status(500)
-        .json({
-          message: "Erreur lors de la récupération de l'utilisateur par ID",
-        });
+      res.status(500).json({
+        message: "Erreur lors de la récupération de l'utilisateur par ID",
+      });
     }
   }
 
@@ -73,11 +71,9 @@ class UserController {
         "Erreur lors de la récupération de tous les utilisateurs :",
         error
       );
-      res
-        .status(500)
-        .json({
-          message: "Erreur lors de la récupération de tous les utilisateurs",
-        });
+      res.status(500).json({
+        message: "Erreur lors de la récupération de tous les utilisateurs",
+      });
     }
   }
 
@@ -132,12 +128,10 @@ class UserController {
       const user = await User.findOne({ email });
 
       if (!user) {
-        res
-          .status(401)
-          .json({
-            authenticationFailed: true,
-            message: "L'adresse e-mail ou le mot de passe est incorrect.",
-          });
+        res.status(401).json({
+          authenticationFailed: true,
+          message: "L'adresse e-mail ou le mot de passe est incorrect.",
+        });
         return;
       }
 
@@ -176,13 +170,15 @@ class UserController {
     }
   }
 
-  static async updatePassword(req: Request, res: Response): Promise<void> { 
+  static async updatePassword(req: Request, res: Response): Promise<void> {
     const userId = req.params.id;
     const newPassword = req.body.password;
-  
+
     try {
-      const result = await User.findByIdAndUpdate(userId, { password: newPassword });
-  
+      const result = await User.findByIdAndUpdate(userId, {
+        password: newPassword,
+      });
+
       if (!result) {
         res.sendStatus(404);
       } else {
@@ -196,54 +192,58 @@ class UserController {
 
   static async getUserByEmail(req: Request, res: Response): Promise<void> {
     const { Email } = req.body;
-  console.info(Email);
-  try {
-    const user = await User.findOne({ email: Email });
-    if (user != null) {
-      const uniqueKey = crypto.randomBytes(32).toString("hex");
-      const resetPasswordData = { uniqueKey, Email };
-      await ResetPassword.create(resetPasswordData);
+    console.info(Email);
+    try {
+      const user = await User.findOne({ email: Email });
+      if (user != null) {
+        const uniqueKey = crypto.randomBytes(32).toString("hex");
+        const resetPasswordData = { uniqueKey, Email };
+        await ResetPassword.create(resetPasswordData);
 
-      res.status(200).send(resetPasswordData);
+        res.status(200).send(resetPasswordData);
 
-      const emailUser = await sendEmail({
-        to: "dhiaeddinejm@gmail.com",
-        subject: "Réinitialisation de votre mot de passe",
-        text: `Bonjour, vous avez demandé la réinitialisation de votre mot de passe. Veuillez cliquer sur ce lien pour changer votre mot de passe : http://localhost:3000/resetpassword/${uniqueKey}`,
-        html: `Bonjour, vous avez demandé la réinitialisation de votre mot de passe. Veuillez cliquer sur ce lien pour changer votre mot de passe : http://localhost:3000/resetpassword/${uniqueKey}`,
-      });
+        const emailUser = await sendEmail({
+          to: "dhiaeddinejm@gmail.com",
+          subject: "Réinitialisation de votre mot de passe",
+          text: `Bonjour, vous avez demandé la réinitialisation de votre mot de passe. Veuillez cliquer sur ce lien pour changer votre mot de passe : http://localhost:3000/resetpassword/${uniqueKey}`,
+          html: `Bonjour, vous avez demandé la réinitialisation de votre mot de passe. Veuillez cliquer sur ce lien pour changer votre mot de passe : http://localhost:3000/resetpassword/${uniqueKey}`,
+        });
 
-      if (emailUser) {
-        console.info("Email sent");
+        if (emailUser) {
+          console.info("Email sent");
+        } else {
+          console.info("Email not sent");
+        }
       } else {
-        console.info("Email not sent");
+        res.status(404).send("Utilisateur non trouvé");
       }
-    } else {
-      res.status(404).send("Utilisateur non trouvé");
+    } catch (err) {
+      console.error(err);
+      res
+        .status(500)
+        .send(
+          "Erreur lors de la récupération des données depuis la base de données"
+        );
     }
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Erreur lors de la récupération des données depuis la base de données");
-  }
   }
 
-  static async verifyKey (req: Request, res: Response): Promise<void> {
+  static async verifyKey(req: Request, res: Response): Promise<void> {
     const { key } = req.body;
     console.info(key);
-  
+
     try {
       const resetPasswordData = await ResetPassword.findOne({ uniqueKey: key });
-  
+
       if (resetPasswordData) {
         const currentTime = new Date();
         const expirationTime = resetPasswordData.expires_at;
-        
+
         if (currentTime > expirationTime) {
           res.status(400).send(true);
           return;
         }
       }
-      
+
       res.status(200).send(false);
     } catch (err) {
       console.error(err);
@@ -251,20 +251,23 @@ class UserController {
     }
   }
 
-  static async resetPassword (req: Request, res: Response): Promise<void> {
+  static async resetPassword(req: Request, res: Response): Promise<void> {
     const { password, key } = req.body;
     console.info(password, key);
-  
+
     if (!key) {
       res.sendStatus(400);
       return;
     }
-  
+
     try {
       const resetPasswordData = await ResetPassword.findOne({ uniqueKey: key });
-  
+
       if (resetPasswordData) {
-        await User.updateOne({ email: resetPasswordData.Email }, { password: password });
+        await User.updateOne(
+          { email: resetPasswordData.Email },
+          { password: password }
+        );
         res.sendStatus(204);
       } else {
         res.sendStatus(404);
@@ -275,17 +278,47 @@ class UserController {
     }
   }
 
-  static async verifyPseudoAvailability ( pseudo: string): Promise<boolean> {
+  static async verifyPseudoAvailability(
+    req: Request,
+    res: Response
+  ): Promise<void> {
     try {
-      const user = await User.findOne({ pseudo });
+      const existingUser = await User.findOne({ pseudo: req.body.pseudo });
 
-      return !user;
-    } catch (error) {
-      console.error("Erreur lors de la vérification de la disponibilité du nom d'utilisateur :", error);
-      throw new Error("Erreur interne du serveur");
+      if (existingUser) {
+        res.status(400).json({ message: "Le pseudo existe déjà." });
+      } else {
+        res.status(200).json({ message: "Le pseudo est disponible." });
+      }
+    } catch (err: any) {
+      console.error(
+        "Erreur lors de la vérification de l'utilisateur existant :",
+        err
+      );
+      res.status(500).json({ message: "Internal Server Error" });
     }
   }
-  }
 
+  static async verifyEmailAvailability(
+    req: Request,
+    res: Response
+  ): Promise<void> {
+    try {
+      const existingUser = await User.findOne({ email: req.body.email });
+
+      if (existingUser) {
+        res.status(400).json({ message: "L'email' existe déjà." });
+      } else {
+        res.status(200).json({ message: "L'email' est disponible." });
+      }
+    } catch (err: any) {
+      console.error(
+        "Erreur lors de la vérification de l'utilisateur existant :",
+        err
+      );
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  }
+}
 
 export default UserController;

@@ -5,7 +5,8 @@ import { hashPassword, verifyPassword, verifyToken,expiredSessionToken } from ".
 
 const router: Router = express.Router();
 
-router.get("/verifyPseudo", UserController.verifyPseudoAvailability);
+router.post("/verifyPseudo", UserController.verifyPseudoAvailability);
+router.post("/verifyEmail", UserController.verifyEmailAvailability);
 
 // Verify Email
 router.post("/verifyUser", UserController.getUserByEmail);
