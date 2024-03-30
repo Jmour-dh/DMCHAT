@@ -1,32 +1,32 @@
-import React from 'react';
 import {
   View,
   Text,
   Image,
   TextInput,
-  TouchableOpacity,
   SafeAreaView,
+  TouchableOpacity,
 } from 'react-native';
+import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import styles from './Login.styles';
+import styles from './Register.styles';
 import logo from '../../assets/images/logo_DMCHAT.png';
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const navigation = useNavigation();
-  const handleRegisterPress = () => {
-    navigation.navigate('Register');
+  const handleLoginPress = () => {
+    navigation.navigate('Login');
   };
   return (
     <SafeAreaView style={styles.screenContainer}>
       <View style={styles.mainContainer}>
         <View style={styles.headerContainer}>
-          <Text style={styles.titleTextStyle}>Bienvenue !</Text>
+          <Text style={styles.titleTextStyle}>Créer un nouveau compte</Text>
           <View style={styles.logoContainer}>
             <Image source={logo} alt="logo" />
           </View>
           <View style={styles.descriptionContainer}>
             <Text style={styles.descriptionTextStyle}>
-              Veuillez vous connecter à votre compte
+              Veuillez remplir le formulaire pour continuer
             </Text>
           </View>
         </View>
@@ -41,21 +41,21 @@ const Login: React.FC = () => {
             placeholderTextColor="#6C6D72"
             style={styles.textInputStyle}
           />
-          <TouchableOpacity style={styles.forgotButtonStyle}>
-            <Text style={styles.forgotPasswordTextStyle}>
-              Mode de passe oublié ?
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.signInButtonStyle}>
-            <Text style={styles.signInButtonTextStyle}>Se connecter</Text>
+          <TextInput
+            placeholder="Confirmer le mot de passe"
+            placeholderTextColor="#6C6D72"
+            style={styles.textInputStyle}
+          />
+          <TouchableOpacity style={styles.nextButtonStyle}>
+            <Text style={styles.nextButtonTextStyle}>Suivant</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.signUpButtonContainer}>
-          <Text style={styles.signUpTextStyle}>Vous n’avez pas de compte?</Text>
+        <View style={styles.signInButtonContainer}>
+          <Text style={styles.signInTextStyle}>Avez déjà un compte?</Text>
           <TouchableOpacity
-            style={styles.signUpButtonStyle}
-            onPress={handleRegisterPress}>
-            <Text style={styles.signUpButtonTextStyle}>S'inscrire</Text>
+            style={styles.signInButtonStyle}
+            onPress={handleLoginPress}>
+            <Text style={styles.signInButtonTextStyle}>Se connecter</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -63,4 +63,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;
