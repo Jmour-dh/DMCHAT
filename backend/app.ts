@@ -5,6 +5,9 @@ import fs from "fs";
 import { connectToDatabase } from "./database";
 import userRoutes from "./routes/users.route";
 import emailVerificationRoutes from "./routes/emailVerification.route"
+import http from "http";
+import initializeSocket from "./socket";
+
 
 const app: Express = express();
 
@@ -35,8 +38,11 @@ if (fs.existsSync(reactIndexFile)) {
 
 connectToDatabase();
 
-
 app.use(userRoutes);
 app.use(emailVerificationRoutes)
+
+const server: http.Server = http.createServer(app);
+
+initializeSocket(server);
 
 export default app;
