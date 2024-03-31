@@ -10,11 +10,11 @@ const VerifyEmailCode: React.FC = () => {
   const handleNextPress = () => {
     navigation.navigate('CreateProfile');
   };
-  const pinRefs = useRef<Array<React.RefObject<TextInput>>>(
-    Array(4)
-      .fill(null)
-      .map(() => React.createRef()),
-  );
+  const pinRefs = useRef<Array<React.RefObject<TextInput>>>([]);
+  for (let i = 0; i < 4; i++) {
+    pinRefs.current.push(React.createRef<TextInput>());
+  }
+
   const [pins, setPins] = useState<string[]>(Array(4).fill(''));
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -38,10 +38,10 @@ const VerifyEmailCode: React.FC = () => {
       setPins(newPins);
       setErrorMessage('');
 
-      if (value && index < 3) {
-        pinRefs.current[index + 1]?.focus();
-      } else if (!value && index > 0) {
-        pinRefs.current[index - 1]?.focus();
+      if (value && index < 3 && pinRefs.current[index + 1]) {
+        pinRefs.current[index + 1].current?.focus();
+      } else if (!value && index > 0 && pinRefs.current[index - 1]) {
+        pinRefs.current[index - 1].current?.focus();
       }
     } else {
       setErrorMessage('Seuls les chiffres sont acceptés.');
