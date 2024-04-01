@@ -1,10 +1,14 @@
-import {View, Pressable, Image, Text, TextInput,TouchableOpacity} from 'react-native';
-import React from 'react';
+import {View, Pressable, Image, Text, TextInput, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
 import styles from './CreateProfileSetp2.styles';
 import noGender from '../../../assets/images/noGender.png';
 import camera from '../../../assets/icons/camera.png';
+import ProgressBar from '../../../components/ProgressBar/ProgressBar';
 
 const CreateProfileSetp2: React.FC = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [progress, setProgress] = useState<number>(0);
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.pictureContainer}>
@@ -12,9 +16,10 @@ const CreateProfileSetp2: React.FC = () => {
           <Image style={styles.pressableContainer} source={noGender} />
         </Pressable>
       </View>
+      {isLoading && <ProgressBar progress={progress} />}
       <View style={styles.cameraContainer}>
         <Pressable>
-          <Image style={{width:30, height:30}} source={camera} />
+          <Image style={{width: 30, height: 30}} source={camera} />
         </Pressable>
       </View>
       <View style={styles.textInputContainer}>

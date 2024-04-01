@@ -27,7 +27,7 @@ const styles: Styles = StyleSheet.create<Styles>({
     height: 120,
   },
   cameraContainer: {
-    marginTop:"13%",
+    marginTop: '13%',
     position: 'absolute',
     top: 80,
     right: '35%',
