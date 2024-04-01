@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { View, Text, Image, SafeAreaView, TouchableOpacity, TextInput, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React, {useState} from 'react';
+import {View, Text, Image, SafeAreaView, TouchableOpacity, TextInput, Alert} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Formik } from 'formik';
+import {Formik} from 'formik';
 import * as yup from 'yup';
 import styles from './Register.styles';
 import logo from '../../assets/images/logo_DMCHAT.png';
 import axios from 'axios';
-import { hostname } from '../../hostname/hostname';
+import {hostname} from '../../hostname/hostname';
 
 const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -16,7 +16,7 @@ const Register: React.FC = () => {
   const [verificationMessage, setVerificationMessage] = useState<string>('');
 
   const handleValidationSchema = yup.object().shape({
-    email: yup.string().matches(emailRegex,'Adresse e-mail invalide').required('Champ requis'),
+    email: yup.string().matches(emailRegex, 'Adresse e-mail invalide').required('Champ requis'),
     password: yup.string().min(6, 'Le mot de passe doit contenir au moins 6 caractères').required('Champ requis'),
     confirmPassword: yup
       .string()
@@ -24,10 +24,10 @@ const Register: React.FC = () => {
       .required('Champ requis'),
   });
 
-  const handleSubmit = async (values: { email: string; password: string }) => {
+  const handleSubmit = async (values: {email: string; password: string}) => {
     try {
       const response = await verifyEmail(values.email);
-  
+
       if (response && response.message === "L'email existe déjà.") {
         setVerificationMessage(response.message);
       } else {
@@ -49,7 +49,7 @@ const Register: React.FC = () => {
   const verifyEmail = async (emailValue: string) => {
     try {
       if (emailValue && emailValue.trim() !== '') {
-        const response = await axios.post<{ message: string }>(`${hostname}/verifyEmail`, {
+        const response = await axios.post<{message: string}>(`${hostname}/verifyEmail`, {
           email: emailValue,
         });
         return response.data;
@@ -62,7 +62,7 @@ const Register: React.FC = () => {
 
   const sendVerificationEmail = async (email: string) => {
     try {
-      await axios.post(`${hostname}/sendVerification`, { email });
+      await axios.post(`${hostname}/sendVerification`, {email});
     } catch (error) {
       console.error("Erreur lors de l'envoi de la demande de vérification par e-mail :", error);
     }
@@ -84,17 +84,10 @@ const Register: React.FC = () => {
             <Text style={styles.descriptionTextStyle}>Veuillez remplir le formulaire pour continuer</Text>
           </View>
         </View>
-        <Formik initialValues={{ email: '', password: '', confirmPassword: '' }} validationSchema={handleValidationSchema} onSubmit={handleSubmit}>
-          {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+        <Formik initialValues={{email: '', password: '', confirmPassword: ''}} validationSchema={handleValidationSchema} onSubmit={handleSubmit}>
+          {({handleChange, handleBlur, handleSubmit, values, errors}) => (
             <View style={styles.textInputContainer}>
-              <TextInput
-                placeholder="Email"
-                placeholderTextColor="#6C6D72"
-                style={styles.textInputStyle}
-                onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
-                value={values.email}
-              />
+              <TextInput placeholder="Email" placeholderTextColor="#6C6D72" style={styles.textInputStyle} onChangeText={handleChange('email')} onBlur={handleBlur('email')} value={values.email} />
               {errors.email && <Text style={styles.errorTextStyle}>{errors.email}</Text>}
               <TextInput
                 placeholder="Mot de passe"
