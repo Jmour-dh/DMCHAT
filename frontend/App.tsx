@@ -24,8 +24,8 @@ const AppContent: React.FC = () => {
         onPress={() => {
           navigation.navigate('Home');
         }}>
-           <Image source={leftArrow} style= {{height: 25, width: 25, marginRight:5}}/>
-        </TouchableOpacity>
+        <Image source={leftArrow} style={{height: 25, width: 25, marginRight: 5}} />
+      </TouchableOpacity>
     );
   };
   return (
