@@ -6,9 +6,7 @@ import styles from "./Channel.styles";
 const fleche = require('../../assets/images/fleche.png');
 const photo = require('../../assets/images/photo.png');
 const camera = require('../../assets/images/camera.png');
-import ImagePicker, { MediaType , CameraOptions } from 'react-native-image-picker';
-import { launchCamera } from 'react-native-image-picker'
-
+import ImagePicker, { MediaType , CameraOptions, launchCamera} from 'react-native-image-picker';
 
 //import { UserContext } from '../AuthContext/Usercontext';
 
