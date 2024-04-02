@@ -16,6 +16,10 @@ const Login: React.FC = () => {
   const handleRegisterPress = () => {
     navigation.navigate('Register');
   };
+  const handleHomePress = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <SafeAreaView style={styles.screenContainer}>
       <View style={styles.mainContainer}>
@@ -46,7 +50,7 @@ const Login: React.FC = () => {
               Mode de passe oublié ?
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.signInButtonStyle}>
+          <TouchableOpacity style={styles.signInButtonStyle} onPress={handleHomePress}>
             <Text style={styles.signInButtonTextStyle}>Se connecter</Text>
           </TouchableOpacity>
         </View>

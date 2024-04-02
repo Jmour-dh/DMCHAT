@@ -1,41 +1,44 @@
-com.frontend.app-jetified-appcompat-resources-1.6.1-0 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\061d078e19c3ae7d999b8bf4f4fbd3f7\transformed\jetified-appcompat-resources-1.6.1\res
-com.frontend.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-1 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\0c17d1aa2ccc813649d410d5ca1839aa\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
-com.frontend.app-recyclerview-1.1.0-2 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\0fd1425c12b4ad547fe75169beca3740\transformed\recyclerview-1.1.0\res
-com.frontend.app-core-1.9.0-3 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\res
-com.frontend.app-jetified-tracing-1.1.0-4 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\1b375b5e368b03c6f05fa335182ca0d8\transformed\jetified-tracing-1.1.0\res
-com.frontend.app-transition-1.2.0-5 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\345ebcb3e4094628456bcdee8e74a5da\transformed\transition-1.2.0\res
-com.frontend.app-jetified-autofill-1.1.0-6 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\38344280fe9342d918737701bd2e1811\transformed\jetified-autofill-1.1.0\res
-com.frontend.app-sqlite-framework-2.2.0-7 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\424bb7f5e8999507734fb924a0875fe1\transformed\sqlite-framework-2.2.0\res
-com.frontend.app-jetified-emoji2-views-helper-1.2.0-8 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\46d614963c22b23ab93f8be235bc125f\transformed\jetified-emoji2-views-helper-1.2.0\res
-com.frontend.app-sqlite-2.2.0-9 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\47b7a7c93b579e9c1ca6a01deaba4de3\transformed\sqlite-2.2.0\res
-com.frontend.app-jetified-startup-runtime-1.1.1-10 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\57875db857c52963776a564122dcb84b\transformed\jetified-startup-runtime-1.1.1\res
-com.frontend.app-swiperefreshlayout-1.1.0-11 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\5b356190bdf4bb7065067fc153a69c6d\transformed\swiperefreshlayout-1.1.0\res
-com.frontend.app-lifecycle-livedata-core-2.5.1-12 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\605c5c983d653fbcbe978ef5aeb9a8b2\transformed\lifecycle-livedata-core-2.5.1\res
-com.frontend.app-cardview-1.0.0-13 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\6119c53d075509c7c00b74ccdeb41c3b\transformed\cardview-1.0.0\res
-com.frontend.app-jetified-savedstate-1.2.0-14 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\699d8495cfbcf29796d79737ecf7fe4f\transformed\jetified-savedstate-1.2.0\res
-com.frontend.app-jetified-core-ktx-1.9.0-15 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\6fdd42089cdfdb89a5f7c93d6af7471d\transformed\jetified-core-ktx-1.9.0\res
-com.frontend.app-jetified-lifecycle-process-2.4.1-16 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\res
-com.frontend.app-jetified-viewpager2-1.0.0-17 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\933cca3d682df19ab6b85bbd4417e041\transformed\jetified-viewpager2-1.0.0\res
-com.frontend.app-jetified-flipper-0.201.0-18 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\9b2c28bd5719adb7e465469e2ca76c12\transformed\jetified-flipper-0.201.0\res
-com.frontend.app-drawerlayout-1.1.1-19 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\9b7c687cf2ef0cdf849c0c1404623f4f\transformed\drawerlayout-1.1.1\res
-com.frontend.app-lifecycle-viewmodel-2.5.1-20 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\aa8b400e3fa62f6a4287be6e71a3821f\transformed\lifecycle-viewmodel-2.5.1\res
-com.frontend.app-appcompat-1.6.1-21 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\b3627ca143232ec2ceb6e319eb18971d\transformed\appcompat-1.6.1\res
-com.frontend.app-fragment-1.3.6-22 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\b3aae516de8ada04cd390a9558584616\transformed\fragment-1.3.6\res
-com.frontend.app-lifecycle-runtime-2.5.1-23 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\c2c67d6ef97116786f5e00cacbb4d36d\transformed\lifecycle-runtime-2.5.1\res
-com.frontend.app-material-1.9.0-24 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\d3a8a24834f295d8078f18b8298041f7\transformed\material-1.9.0\res
-com.frontend.app-constraintlayout-2.0.1-25 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\dd997c22ecb777a9e0898386a3d502a5\transformed\constraintlayout-2.0.1\res
-com.frontend.app-jetified-react-android-0.73.6-debug-26 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\e1231b5b187cb579b629117f9511a862\transformed\jetified-react-android-0.73.6-debug\res
-com.frontend.app-jetified-activity-1.6.0-27 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\e58f5a5a9361b8dc0ec210eacdd61c46\transformed\jetified-activity-1.6.0\res
-com.frontend.app-jetified-drawee-3.1.3-28 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\ec5ffae71883a2ffe61d9bb0ecd6125b\transformed\jetified-drawee-3.1.3\res
-com.frontend.app-jetified-annotation-experimental-1.3.0-29 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\efce1b44886555346c024fcbf6fda611\transformed\jetified-annotation-experimental-1.3.0\res
-com.frontend.app-coordinatorlayout-1.2.0-30 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\f1ad4007c9d50652fdaa15828c92907b\transformed\coordinatorlayout-1.2.0\res
-com.frontend.app-jetified-emoji2-1.2.0-31 C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\res
-com.frontend.app-pngs-32 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\build\generated\res\pngs\debug
-com.frontend.app-resValues-33 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\build\generated\res\resValues\debug
-com.frontend.app-packageDebugResources-34 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.frontend.app-packageDebugResources-35 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.frontend.app-merged_res-36 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\build\intermediates\merged_res\debug
-com.frontend.app-debug-37 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\debug\res
-com.frontend.app-main-38 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\res
-com.frontend.app-packaged_res-39 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
-com.frontend.app-packaged_res-40 C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
+com.frontend.app-recyclerview-1.1.0-0 C:\Users\miria\.gradle\caches\transforms-3\0caa0a8b75d1d3781f3279bfa2db3353\transformed\recyclerview-1.1.0\res
+com.frontend.app-swiperefreshlayout-1.1.0-1 C:\Users\miria\.gradle\caches\transforms-3\2c0f816f43a8136d7e1dfb33e174b832\transformed\swiperefreshlayout-1.1.0\res
+com.frontend.app-jetified-emoji2-1.2.0-2 C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\res
+com.frontend.app-jetified-autofill-1.1.0-3 C:\Users\miria\.gradle\caches\transforms-3\3805764b6d477af58c2c447e35b58023\transformed\jetified-autofill-1.1.0\res
+com.frontend.app-drawerlayout-1.1.1-4 C:\Users\miria\.gradle\caches\transforms-3\38abf3470e3dc443a3bef4c064ef6490\transformed\drawerlayout-1.1.1\res
+com.frontend.app-lifecycle-livedata-core-2.5.1-5 C:\Users\miria\.gradle\caches\transforms-3\4614c9d5399be88382e389aee724d9c9\transformed\lifecycle-livedata-core-2.5.1\res
+com.frontend.app-jetified-react-android-0.73.6-debug-6 C:\Users\miria\.gradle\caches\transforms-3\46a6eac3d075303bf475f9e28086836b\transformed\jetified-react-android-0.73.6-debug\res
+com.frontend.app-jetified-emoji2-views-helper-1.2.0-7 C:\Users\miria\.gradle\caches\transforms-3\47c2bb82150df3885bf780dada14d161\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.frontend.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-8 C:\Users\miria\.gradle\caches\transforms-3\607baa342b1e9eb54b9240949b9afbfa\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.frontend.app-constraintlayout-2.0.1-9 C:\Users\miria\.gradle\caches\transforms-3\68c5c0e6829c443683c5f1cdd63aac9e\transformed\constraintlayout-2.0.1\res
+com.frontend.app-transition-1.2.0-10 C:\Users\miria\.gradle\caches\transforms-3\6ba0c7605442b9257abcb303dabedd31\transformed\transition-1.2.0\res
+com.frontend.app-jetified-drawee-3.1.3-11 C:\Users\miria\.gradle\caches\transforms-3\6e8f2570010a0651dbd50b5fdc0f2a3a\transformed\jetified-drawee-3.1.3\res
+com.frontend.app-appcompat-1.6.1-12 C:\Users\miria\.gradle\caches\transforms-3\76dfe396c155f146d86e69b88acc787c\transformed\appcompat-1.6.1\res
+com.frontend.app-jetified-startup-runtime-1.1.1-13 C:\Users\miria\.gradle\caches\transforms-3\79dbdb79917858204f32960a44e61eb2\transformed\jetified-startup-runtime-1.1.1\res
+com.frontend.app-jetified-viewpager2-1.0.0-14 C:\Users\miria\.gradle\caches\transforms-3\7a4a0d077c7640bb81366183527a50ea\transformed\jetified-viewpager2-1.0.0\res
+com.frontend.app-jetified-activity-1.6.0-15 C:\Users\miria\.gradle\caches\transforms-3\7fd98c4db64a066a6f2b535ff25d0982\transformed\jetified-activity-1.6.0\res
+com.frontend.app-jetified-core-ktx-1.9.0-16 C:\Users\miria\.gradle\caches\transforms-3\8b508fd43f5a36b8e53ca5034f41b341\transformed\jetified-core-ktx-1.9.0\res
+com.frontend.app-jetified-appcompat-resources-1.6.1-17 C:\Users\miria\.gradle\caches\transforms-3\8ba0b27db39be6b54e0cc5ec1d9b3424\transformed\jetified-appcompat-resources-1.6.1\res
+com.frontend.app-lifecycle-viewmodel-2.5.1-18 C:\Users\miria\.gradle\caches\transforms-3\8be81889640bcda8b5c014dff7201e06\transformed\lifecycle-viewmodel-2.5.1\res
+com.frontend.app-jetified-annotation-experimental-1.3.0-19 C:\Users\miria\.gradle\caches\transforms-3\9bd822e01edf3e86c6bdb04ef3ef1b3b\transformed\jetified-annotation-experimental-1.3.0\res
+com.frontend.app-material-1.9.0-20 C:\Users\miria\.gradle\caches\transforms-3\9da7ddcf2c1c7900848fa49a3c559911\transformed\material-1.9.0\res
+com.frontend.app-core-1.9.0-21 C:\Users\miria\.gradle\caches\transforms-3\9f9f3fd1e16439525052379f73eb363c\transformed\core-1.9.0\res
+com.frontend.app-lifecycle-runtime-2.5.1-22 C:\Users\miria\.gradle\caches\transforms-3\a3bdc0af9f2086925482401dbd260349\transformed\lifecycle-runtime-2.5.1\res
+com.frontend.app-sqlite-2.2.0-23 C:\Users\miria\.gradle\caches\transforms-3\a5b1c0fa6aa621311cdc58c982426225\transformed\sqlite-2.2.0\res
+com.frontend.app-jetified-savedstate-1.2.0-24 C:\Users\miria\.gradle\caches\transforms-3\a65f7d1a22130688e35599a5f1d54942\transformed\jetified-savedstate-1.2.0\res
+com.frontend.app-jetified-lifecycle-process-2.4.1-25 C:\Users\miria\.gradle\caches\transforms-3\e69cf860b71ce40109b4fc64125425ef\transformed\jetified-lifecycle-process-2.4.1\res
+com.frontend.app-fragment-1.3.6-26 C:\Users\miria\.gradle\caches\transforms-3\ee183c05a247221997c483e309820210\transformed\fragment-1.3.6\res
+com.frontend.app-cardview-1.0.0-27 C:\Users\miria\.gradle\caches\transforms-3\ef8a0d34198477adc3c57bc009c04886\transformed\cardview-1.0.0\res
+com.frontend.app-jetified-tracing-1.1.0-28 C:\Users\miria\.gradle\caches\transforms-3\ef9c76b6db4ffb415dd52f903344a660\transformed\jetified-tracing-1.1.0\res
+com.frontend.app-jetified-flipper-0.201.0-29 C:\Users\miria\.gradle\caches\transforms-3\f15d4c2cbe19659f4ae4b77cc55e1046\transformed\jetified-flipper-0.201.0\res
+com.frontend.app-coordinatorlayout-1.2.0-30 C:\Users\miria\.gradle\caches\transforms-3\f36452c8d82e2c62ec4f53fc06d9ce06\transformed\coordinatorlayout-1.2.0\res
+com.frontend.app-sqlite-framework-2.2.0-31 C:\Users\miria\.gradle\caches\transforms-3\fa63710f5920be0e4d8e2c0279b2a5ec\transformed\sqlite-framework-2.2.0\res
+com.frontend.app-pngs-32 C:\Users\miria\DMCHAT\frontend\android\app\build\generated\res\pngs\debug
+com.frontend.app-resValues-33 C:\Users\miria\DMCHAT\frontend\android\app\build\generated\res\resValues\debug
+com.frontend.app-packageDebugResources-34 C:\Users\miria\DMCHAT\frontend\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.frontend.app-packageDebugResources-35 C:\Users\miria\DMCHAT\frontend\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.frontend.app-merged_res-36 C:\Users\miria\DMCHAT\frontend\android\app\build\intermediates\merged_res\debug
+com.frontend.app-debug-37 C:\Users\miria\DMCHAT\frontend\android\app\src\debug\res
+com.frontend.app-main-38 C:\Users\miria\DMCHAT\frontend\android\app\src\main\res
+com.frontend.app-packaged_res-39 C:\Users\miria\DMCHAT\frontend\node_modules\react-native-reanimated\android\build\intermediates\packaged_res\debug
+com.frontend.app-packaged_res-40 C:\Users\miria\DMCHAT\frontend\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
+com.frontend.app-packaged_res-41 C:\Users\miria\DMCHAT\frontend\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
+com.frontend.app-packaged_res-42 C:\Users\miria\DMCHAT\frontend\node_modules\react-native-svg\android\build\intermediates\packaged_res\debug
+com.frontend.app-packaged_res-43 C:\Users\miria\DMCHAT\frontend\node_modules\react-native-vector-icons\android\build\intermediates\packaged_res\debug

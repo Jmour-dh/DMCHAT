@@ -12,6 +12,8 @@ interface User extends Document {
   verifiedEmailCode:boolean;
   createdAt: Date;
   updatedAt: Date;
+  messages: Schema.Types.ObjectId[];
+  channels: Schema.Types.ObjectId[];
 }
 
 // Définir une fonction de rappel pour définir le chemin par défaut de l'image de profil
@@ -31,6 +33,9 @@ const UserSchema = new Schema<User>({
   verifiedEmailCode: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
+  messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }],
+  channels: [{ type: Schema.Types.ObjectId, ref: 'Channel' }] 
+  
 });
 
 const UserModel: Model<User> = model<User>('User', UserSchema);

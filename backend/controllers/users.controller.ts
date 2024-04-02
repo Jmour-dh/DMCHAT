@@ -6,6 +6,7 @@ import ResetPassword from "../models/resetPassword.model";
 import { sendEmail } from "../utils/requestMailVerification";
 
 class UserController {
+  
   static async create(req: Request, res: Response): Promise<void> {
     try {
       const { pseudo, email, password, firstName, lastName, sexe } = req.body;

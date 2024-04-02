@@ -6,6 +6,8 @@ interface Message extends Document {
   userName: string;
   content: string;
   createdAt: Date;
+  user: Schema.Types.ObjectId; 
+  channel: Schema.Types.ObjectId;
 }
 
 const messageSchema = new Schema<Message>({
@@ -30,7 +32,9 @@ const messageSchema = new Schema<Message>({
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
+  user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  channel: { type: Schema.Types.ObjectId, ref: 'Channel', required: true }
 });
 
 const MessageModel = model<Message>('Message', messageSchema);

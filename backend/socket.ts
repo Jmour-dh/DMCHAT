@@ -47,7 +47,7 @@ export default function initializeSocket(server: any) {
           const user = await User.findOne({ _id: (socket as any).userId });
           if (user) {
             const newMessage = new Message({
-              chatroom: channelId,
+              channel: channelId,
               user: (socket as any).userId,
               name: user.pseudo,
               message: message,

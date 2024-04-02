@@ -4,9 +4,10 @@ import path from "path";
 import fs from "fs";
 import { connectToDatabase } from "./database";
 import userRoutes from "./routes/users.route";
+import channelRoutes from "./routes/channels.routes";
+import messageRoutes from "./routes/messages.routes";
 import emailVerificationRoutes from "./routes/emailVerification.route"
-import http from "http";
-import initializeSocket from "./socket";
+
 
 
 const app: Express = express();
@@ -29,6 +30,7 @@ const reactIndexFile = path.join(
 );
 
 if (fs.existsSync(reactIndexFile)) {
+  
   app.use(express.static(path.join(__dirname, "..", "..", "frontend")));
 
   app.get("*", (req: Request, res: Response) => {
@@ -41,8 +43,8 @@ connectToDatabase();
 app.use(userRoutes);
 app.use(emailVerificationRoutes)
 
-const server: http.Server = http.createServer(app);
+app.use(channelRoutes);
+app.use(messageRoutes);
 
-initializeSocket(server);
 
 export default app;

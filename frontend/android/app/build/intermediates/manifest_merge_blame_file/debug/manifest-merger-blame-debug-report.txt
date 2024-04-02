@@ -9,110 +9,146 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:3:5-67
-11-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:3:22-64
-12    <!--
-13    This manifest file is used only by Gradle to configure debug-only capabilities
-14    for React Native Apps.
-15    -->
-16    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-16-->[com.facebook.react:react-android:0.73.6] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\e1231b5b187cb579b629117f9511a862\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:16:5-78
-16-->[com.facebook.react:react-android:0.73.6] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\e1231b5b187cb579b629117f9511a862\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:16:22-75
-17    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-17-->[com.facebook.flipper:flipper:0.201.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\9b2c28bd5719adb7e465469e2ca76c12\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:5-76
-17-->[com.facebook.flipper:flipper:0.201.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\9b2c28bd5719adb7e465469e2ca76c12\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:22-73
-18
-19    <permission
-19-->[androidx.core:core:1.9.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-20        android:name="com.frontend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-20-->[androidx.core:core:1.9.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-21        android:protectionLevel="signature" />
-21-->[androidx.core:core:1.9.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-22
-23    <uses-permission android:name="com.frontend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-23-->[androidx.core:core:1.9.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-23-->[androidx.core:core:1.9.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-24
-25    <application
-25-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:5:5-24:19
-26        android:name="com.frontend.MainApplication"
-26-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:6:7-38
-27        android:allowBackup="false"
-27-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:10:7-34
-28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-28-->[androidx.core:core:1.9.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\13659b94c66de92d98d7f8af61234b95\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-29        android:debuggable="true"
-30        android:extractNativeLibs="true"
-31        android:icon="@mipmap/ic_launcher"
-31-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:8:7-41
-32        android:label="@string/app_name"
-32-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:7:7-39
-33        android:roundIcon="@mipmap/ic_launcher_round"
-33-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:9:7-52
-34        android:theme="@style/AppTheme"
-34-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:11:7-38
-35        android:usesCleartextTraffic="true" >
-35-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\debug\AndroidManifest.xml:6:9-44
-36        <activity
-36-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:12:7-23:18
-37            android:name="com.frontend.MainActivity"
-37-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:13:9-37
-38            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-38-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:15:9-118
-39            android:exported="true"
-39-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:18:9-32
-40            android:label="@string/app_name"
-40-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:14:9-41
-41            android:launchMode="singleTask"
-41-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:16:9-40
-42            android:windowSoftInputMode="adjustResize" >
-42-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:17:9-51
-43            <intent-filter>
-43-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:19:9-22:25
-44                <action android:name="android.intent.action.MAIN" />
-44-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:20:13-65
-44-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:20:21-62
-45
-46                <category android:name="android.intent.category.LAUNCHER" />
-46-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:21:13-73
-46-->C:\Users\Dhia Eddine JMOUR\Desktop\Projets\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:21:23-70
-47            </intent-filter>
-48        </activity>
-49        <activity
-49-->[com.facebook.react:react-android:0.73.6] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\e1231b5b187cb579b629117f9511a862\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:19:9-21:40
-50            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-50-->[com.facebook.react:react-android:0.73.6] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\e1231b5b187cb579b629117f9511a862\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:20:13-77
-51            android:exported="false" />
-51-->[com.facebook.react:react-android:0.73.6] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\e1231b5b187cb579b629117f9511a862\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:21:13-37
-52
-53        <provider
-53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-54            android:name="androidx.startup.InitializationProvider"
-54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-55            android:authorities="com.frontend.androidx-startup"
-55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-56            android:exported="false" >
-56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-57            <meta-data
-57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-58                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-59                android:value="androidx.startup" />
-59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\faa3592d2fc203d6c74b9a5f601058a1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-60            <meta-data
-60-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-61                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-61-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-62                android:value="androidx.startup" />
-62-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\71b91ea8216105cda74b0317da307340\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-63        </provider>
-64
-65        <meta-data
-65-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
-66            android:name="com.facebook.soloader.enabled"
-66-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
-67            android:value="false" />
-67-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Dhia Eddine JMOUR\.gradle\caches\transforms-3\03d018e18e7118763cc731de8f689ba0\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
-68    </application>
-69
-70</manifest>
+11-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:2:5-66
+11-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:2:22-64
+12    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+12-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:3:5-77
+12-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:3:22-75
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:4:5-79
+13-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:4:22-77
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:5:5-80
+14-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:5:22-78
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:6:5-64
+15-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:6:22-62
+16    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+16-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:7:5-70
+16-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:7:22-68
+17    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+17-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:8:5-79
+17-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:8:22-77
+18    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+18-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:9:5-74
+18-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:9:22-72
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:10:5-78
+19-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:10:22-76
+20    <uses-permission android:name="android.permission.VIBRATE" />
+20-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:11:5-65
+20-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:11:22-63
+21    <uses-permission android:name="android.permission.WAKE_LOCK" />
+21-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:12:5-67
+21-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:12:22-65
+22    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+22-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:13:5-78
+22-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:13:22-76
+23    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+23-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:14:5-80
+23-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:14:22-78
+24    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+24-->[com.facebook.flipper:flipper:0.201.0] C:\Users\miria\.gradle\caches\transforms-3\f15d4c2cbe19659f4ae4b77cc55e1046\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:5-76
+24-->[com.facebook.flipper:flipper:0.201.0] C:\Users\miria\.gradle\caches\transforms-3\f15d4c2cbe19659f4ae4b77cc55e1046\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:22-73
+25
+26    <permission
+26-->[androidx.core:core:1.9.0] C:\Users\miria\.gradle\caches\transforms-3\9f9f3fd1e16439525052379f73eb363c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+27        android:name="com.frontend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+27-->[androidx.core:core:1.9.0] C:\Users\miria\.gradle\caches\transforms-3\9f9f3fd1e16439525052379f73eb363c\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+28        android:protectionLevel="signature" />
+28-->[androidx.core:core:1.9.0] C:\Users\miria\.gradle\caches\transforms-3\9f9f3fd1e16439525052379f73eb363c\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+29
+30    <uses-permission android:name="com.frontend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+30-->[androidx.core:core:1.9.0] C:\Users\miria\.gradle\caches\transforms-3\9f9f3fd1e16439525052379f73eb363c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.9.0] C:\Users\miria\.gradle\caches\transforms-3\9f9f3fd1e16439525052379f73eb363c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+31
+32    <application
+32-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:16:5-41:19
+33        android:name="com.frontend.MainApplication"
+33-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:17:7-38
+34        android:allowBackup="false"
+34-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:21:7-34
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.9.0] C:\Users\miria\.gradle\caches\transforms-3\9f9f3fd1e16439525052379f73eb363c\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+36        android:debuggable="true"
+37        android:extractNativeLibs="true"
+38        android:icon="@mipmap/ic_launcher"
+38-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:19:7-41
+39        android:label="@string/app_name"
+39-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:18:7-39
+40        android:roundIcon="@mipmap/ic_launcher_round"
+40-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:20:7-52
+41        android:theme="@style/AppTheme"
+41-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:22:7-38
+42        android:usesCleartextTraffic="true" > <!-- Ajoutez votre clÃ© API Google Maps ici -->
+42-->C:\Users\miria\DMCHAT\frontend\android\app\src\debug\AndroidManifest.xml:6:9-44
+43        <meta-data
+43-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:25:7-27:66
+44            android:name="com.google.android.geo.API_KEY"
+44-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:26:9-54
+45            android:value="AIzaSyC_IMygJzn2msqFyZHfZDuTAFypEUEu-YE" />
+45-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:27:9-64
+46
+47        <activity
+47-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:29:7-40:18
+48            android:name="com.frontend.MainActivity"
+48-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:30:9-37
+49            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+49-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:32:9-118
+50            android:exported="true"
+50-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:35:9-32
+51            android:label="@string/app_name"
+51-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:31:9-41
+52            android:launchMode="singleTask"
+52-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:33:9-40
+53            android:windowSoftInputMode="adjustResize" >
+53-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:34:9-51
+54            <intent-filter>
+54-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:36:9-39:25
+55                <action android:name="android.intent.action.MAIN" />
+55-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:37:13-65
+55-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:37:21-62
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+57-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:38:13-73
+57-->C:\Users\miria\DMCHAT\frontend\android\app\src\main\AndroidManifest.xml:38:23-70
+58            </intent-filter>
+59        </activity>
+60        <activity
+60-->[com.facebook.react:react-android:0.73.6] C:\Users\miria\.gradle\caches\transforms-3\46a6eac3d075303bf475f9e28086836b\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:19:9-21:40
+61            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+61-->[com.facebook.react:react-android:0.73.6] C:\Users\miria\.gradle\caches\transforms-3\46a6eac3d075303bf475f9e28086836b\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:20:13-77
+62            android:exported="false" />
+62-->[com.facebook.react:react-android:0.73.6] C:\Users\miria\.gradle\caches\transforms-3\46a6eac3d075303bf475f9e28086836b\transformed\jetified-react-android-0.73.6-debug\AndroidManifest.xml:21:13-37
+63
+64        <provider
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+65            android:name="androidx.startup.InitializationProvider"
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+66            android:authorities="com.frontend.androidx-startup"
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+67            android:exported="false" >
+67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+68            <meta-data
+68-->[androidx.emoji2:emoji2:1.2.0] C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+69                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+70                android:value="androidx.startup" />
+70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\miria\.gradle\caches\transforms-3\32320e2e91731929086357e2ab1334d8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+71            <meta-data
+71-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\miria\.gradle\caches\transforms-3\e69cf860b71ce40109b4fc64125425ef\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+72                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+72-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\miria\.gradle\caches\transforms-3\e69cf860b71ce40109b4fc64125425ef\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+73                android:value="androidx.startup" />
+73-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\miria\.gradle\caches\transforms-3\e69cf860b71ce40109b4fc64125425ef\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+74        </provider>
+75
+76        <meta-data
+76-->[com.facebook.soloader:soloader:0.10.5] C:\Users\miria\.gradle\caches\transforms-3\ffd3c2d03ae06731ddcbda89cc8df014\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+77            android:name="com.facebook.soloader.enabled"
+77-->[com.facebook.soloader:soloader:0.10.5] C:\Users\miria\.gradle\caches\transforms-3\ffd3c2d03ae06731ddcbda89cc8df014\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+78            android:value="false" />
+78-->[com.facebook.soloader:soloader:0.10.5] C:\Users\miria\.gradle\caches\transforms-3\ffd3c2d03ae06731ddcbda89cc8df014\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+79    </application>
+80
+81</manifest>
