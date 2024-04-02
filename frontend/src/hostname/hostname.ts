@@ -1,4 +1,4 @@
-const LOCALHOST_IP: string = 'http://172.16.29.121'; //172.16.29.121 //192.168.1.60
+const LOCALHOST_IP: string = 'http://192.168.1.60'; //172.16.29.121 //192.168.1.60
 
 let settings: {devRunMode: number; withConsole: boolean} = {
   devRunMode: 100,

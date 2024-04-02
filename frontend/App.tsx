@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import Login from './src/screens/login/Login';
 import Register from './src/screens/register/Register';
-import verifyEmailCode from './src/screens/verifyEmailCode/verifyEmailCode';
+import VerifyEmailCode from './src/screens/verifyEmailCode/verifyEmailCode'; // Vérifiez le nom de votre composant VerifyEmailCode
 import CreateProfile from './src/screens/CreateProfile/CreateProfile';
 import { TouchableOpacity, Image } from 'react-native';
 import leftArrow from './src/assets/icons/leftArrow.png';
@@ -21,7 +21,7 @@ const defaultScreenOptions: NativeStackNavigationOptions = {
 };
 
 const AppContent: React.FC = () => {
-  const { isLoggedIn, logout } = useAuth(); // Déplacez la déclaration ici
+  const { isLoggedIn, logout } = useAuth(); 
 
   useEffect(() => {
     const checkTokenExpiration = async () => {
@@ -40,9 +40,7 @@ const AppContent: React.FC = () => {
       }
     };
 
-    // Vérifier l'expiration du token toutes les 4 heures
     const interval = setInterval(checkTokenExpiration, 4 * 60 * 60 * 1000);
-
     return () => clearInterval(interval);
   }, [logout]);
 
@@ -56,18 +54,17 @@ const AppContent: React.FC = () => {
       </TouchableOpacity>
     );
   };
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
         {isLoggedIn ? (
-          <>
-            <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-          </>
+          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         ) : (
           <>
             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
             <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
-            <Stack.Screen name="VerifyEmailCode" component={verifyEmailCode} options={{ headerShown: false }} />
+            <Stack.Screen name="VerifyEmailCode" component={VerifyEmailCode} options={{ headerShown: false }} />
             <Stack.Screen
               name="CreateProfile"
               component={CreateProfile}
