@@ -295,7 +295,6 @@ class UserController {
         "Erreur lors de la vérification de l'utilisateur existant :",
         err
       );
-      res.status(500).json({ message: "Internal Server Error" });
     }
   }
 

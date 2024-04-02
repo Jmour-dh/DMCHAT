@@ -30,7 +30,7 @@ const AppContent: React.FC = () => {
   };
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CreateProfile">
+      <Stack.Navigator >
         <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
         <Stack.Screen name="Register" component={Register} options={{headerShown: false}} />
         <Stack.Screen name="VerifyEmailCode" component={verifyEmailCode} options={{headerShown: false}} />
