@@ -10,6 +10,7 @@ interface Styles {
   validateButtonStyle: ViewStyle;
   validateButtonTextStyle: TextStyle;
   errorTextStyle: TextStyle;
+  image: ImageStyle;
 }
 
 const styles: Styles = StyleSheet.create<Styles>({
@@ -63,6 +64,11 @@ const styles: Styles = StyleSheet.create<Styles>({
   errorTextStyle: {
     color: 'red',
     marginBottom: 5,
+  },
+  image: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
   },
 });
 

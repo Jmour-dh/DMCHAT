@@ -13,15 +13,13 @@ interface User extends Document {
   updatedAt: Date;
 }
 
-const setDefaultProfileImage = () => {
-  return '../assets/images/imageProfile.png';
-};
+
 
 const UserSchema = new Schema<User>({
   pseudo: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  profileImage: { type: String, default: setDefaultProfileImage },
+  profileImage: { type: String },
   firstName: String,
   lastName: String,
   sexe: String,
