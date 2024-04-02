@@ -18,6 +18,7 @@ interface Styles {
   resendTextStyle: TextStyle;
   resendButtonStyle: ViewStyle;
   resendButtonTextStyle: TextStyle;
+  errorTextStyle: TextStyle;
 }
 
 const styles: Styles = StyleSheet.create<Styles>({
@@ -115,6 +116,10 @@ const styles: Styles = StyleSheet.create<Styles>({
     fontSize: 14,
     fontWeight: 'bold',
     color: '#519bf4',
+  },
+  errorTextStyle: {
+    color: 'red',
+    marginBottom: 5,
   },
 });
 export default styles;

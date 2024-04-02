@@ -38,5 +38,6 @@ connectToDatabase();
 
 app.use(userRoutes);
 app.use(emailVerificationRoutes)
+app.use("/upload", express.static(path.join(__dirname, "../assets/upload")));
 
 export default app;

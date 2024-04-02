@@ -4,6 +4,6 @@ import EmailVerificationController from '../controllers/emailVerification.contro
 const router: Router = express.Router();
 
 router.post("/sendVerification", EmailVerificationController.sendVerification);
-router.post("/verifyEmail", EmailVerificationController.verifyEmail);
+router.post("/verifyEmailCode", EmailVerificationController.verifyEmail);
 
 export default router;

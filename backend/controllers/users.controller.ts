@@ -8,18 +8,11 @@ import { sendEmail } from "../utils/requestMailVerification";
 class UserController {
   static async create(req: Request, res: Response): Promise<void> {
     try {
+      // Vérifiez si req.file existe avant d'accéder à req.file.filename
+      const profileImage = req.file ? req.file.filename : undefined;
+  
       const { pseudo, email, password, firstName, lastName, sexe } = req.body;
-
-      if (!pseudo || !email || !password || !firstName || !lastName || !sexe) {
-        res.status(400).json({ message: "Tous les champs sont requis" });
-        return;
-      }
-
-      let profileImage: string | undefined;
-      if (req.file) {
-        profileImage = req.file.filename;
-      }
-
+  
       const newUser = await User.create({
         pseudo,
         email,
@@ -30,15 +23,17 @@ class UserController {
         profileImage,
         role: "user",
       });
-
+  
+      // Répondre avec le nouvel utilisateur créé
       res.status(201).json(newUser);
     } catch (error) {
       console.error("Erreur lors de la création de l'utilisateur :", error);
-      res
-        .status(500)
-        .json({ message: "Erreur lors de la création de l'utilisateur" });
+      res.status(500).json({ message: "Erreur lors de la création de l'utilisateur" });
     }
   }
+  
+  
+
 
   static async getUserById(req: Request, res: Response): Promise<void> {
     try {
@@ -295,7 +290,6 @@ class UserController {
         "Erreur lors de la vérification de l'utilisateur existant :",
         err
       );
-      res.status(500).json({ message: "Internal Server Error" });
     }
   }
 
