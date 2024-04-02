@@ -6,7 +6,6 @@ import styles from './verifyEmailCode.styles';
 import paste from '../../assets/icons/paste.png';
 import {hostname} from '../../hostname/hostname';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Formik} from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
@@ -53,7 +52,6 @@ const VerifyEmailCode: React.FC = () => {
       });
       if (response.status === 200) {
         navigation.navigate('CreateProfile');
-        await AsyncStorage.setItem('verifiedEmailCode', 'true');
         setErrorMessage('');
       } else {
         if (response.status === 404) {

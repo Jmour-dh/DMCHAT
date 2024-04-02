@@ -9,6 +9,7 @@ interface Styles {
   textInputStyle: TextStyle;
   validateButtonStyle: ViewStyle;
   validateButtonTextStyle: TextStyle;
+  errorTextStyle: TextStyle;
 }
 
 const styles: Styles = StyleSheet.create<Styles>({
@@ -58,6 +59,10 @@ const styles: Styles = StyleSheet.create<Styles>({
   validateButtonTextStyle: {
     color: '#fff',
     fontWeight: '600',
+  },
+  errorTextStyle: {
+    color: 'red',
+    marginBottom: 5,
   },
 });
 
