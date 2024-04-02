@@ -40,11 +40,14 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
   }, []);
 
   // Fonction de connexion utilisateur
+  // Dans AuthProvider, mettre à jour la signature de la fonction login
   const login = async (token: string, userId: string): Promise<void> => {
     try {
-      await AsyncStorage.setItem('userToken', token); // Stocke le token utilisateur dans AsyncStorage
-      await AsyncStorage.setItem('userId', userId); // Stocke l'ID de l'utilisateur dans AsyncStorage
-      setIsLoggedIn(true); // Met à jour l'état isLoggedIn à true
+      await AsyncStorage.setItem('userToken', token);
+      await AsyncStorage.setItem('userId', userId);
+      console.log('dhia',isLoggedIn);
+      
+      setIsLoggedIn(true);
     } catch (error) {
       console.error("Erreur lors de la connexion de l'utilisateur:", error);
       throw error;
@@ -64,12 +67,12 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
 
   // Crée une valeur de contexte memoisée pour éviter les rendus inutiles
   const value = useMemo(() => ({isLoggedIn, login, logout}), [isLoggedIn]);
+  console.log('isLoggedIn', isLoggedIn);
 
   // Rendu du fournisseur d'authentification avec le contexte de valeur fourni aux enfants
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-// Spécification des types de props attendus pour le composant AuthProvider
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };

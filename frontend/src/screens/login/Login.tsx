@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, SafeAreaView, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React, {useState} from 'react';
+import {View, Text, Image, TextInput, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import styles from './Login.styles';
 import logo from '../../assets/images/logo_DMCHAT.png';
-import { hostname } from '../../hostname/hostname';
+import {hostname} from '../../hostname/hostname';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useAuth } from '../../context/AuthContext';
+import {useAuth} from '../../context/AuthContext';
 import * as yup from 'yup';
+import axios from 'axios';
 
 const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const Login: React.FC = () => {
   const navigation = useNavigation();
-  const { login } = useAuth();
+  const {login} = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState<string>('');
@@ -24,44 +26,54 @@ const Login: React.FC = () => {
 
   const handleLogin = async () => {
     try {
-      await handleValidationSchema.validate({ email, password }, { abortEarly: false });
-
-      // Envoyer les données de connexion au serveur
-      const response = await fetch(`${hostname}/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
+      // Validation des champs de formulaire
+      await handleValidationSchema.validate({email, password});
+  
+      // Effectuer la requête POST pour la connexion
+      const response = await axios.post(`${hostname}/login`, {
+        email,
+        password,
       });
-
-      if (response.ok) {
-        const data = await response.json();
-        // Stocker le token d'authentification dans AsyncStorage
-        await AsyncStorage.setItem('token', data.authToken);
-        // Stocker l'ID de l'utilisateur dans AsyncStorage (s'il est disponible)
-        await AsyncStorage.setItem('userId', data._id || '');
-        // Connecter l'utilisateur
-        login(data.token, data.userId || '');
+  
+      // Vérifier la réponse de l'API
+      if (response.status === 200) {
+        // Récupérer le token d'authentification et l'ID de l'utilisateur depuis la réponse de l'API
+        const {authToken, user} = response.data;
+        console.log('data', response.data);
+  
+        // Stocker le token d'authentification et l'ID de l'utilisateur dans AsyncStorage
+        await AsyncStorage.setItem('authToken', authToken);
+        await AsyncStorage.setItem('userId', user._id);
+  
+        // Appeler la fonction login du contexte d'authentification pour mettre à jour l'état d'authentification
+        login(authToken, user._id); // Utilisation de la fonction login du contexte d'authentification
+  
+        // Connexion réussie, rediriger l'utilisateur vers la page de profil ou faire toute autre action nécessaire
+        console.log('Connexion réussie !');
+        navigation.navigate('Home');
       } else {
-        const errorMessage = await response.text();
-        Alert.alert('Erreur', errorMessage);
+        // Afficher un message d'erreur en cas de problème avec la connexion
+        Alert.alert('Erreur de connexion', 'Veuillez vérifier vos identifiants et réessayer.');
       }
     } catch (error) {
-      // Gérer les erreurs de validation
+      // Gérer les erreurs de validation des champs de formulaire
       if (error.name === 'ValidationError') {
         error.inner.forEach((err: any) => {
           if (err.path === 'email') {
             setEmailError(err.message);
-          } else if (err.path === 'password') {
+          }
+          if (err.path === 'password') {
             setPasswordError(err.message);
           }
         });
       } else {
+        // Gérer les autres erreurs
         console.error('Erreur lors de la connexion :', error);
+        Alert.alert('Erreur', 'Une erreur est survenue lors de la connexion.');
       }
     }
   };
+  
 
   const handleRegisterPress = () => {
     navigation.navigate('Register');
