@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { View, Pressable, Image, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Pressable, Image, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
 import styles from './CreateProfileSetp2.styles';
 import noGender from '../../../assets/images/noGender.png';
 import camera from '../../../assets/icons/camera.png';
 import ProgressBar from '../../../components/ProgressBar/ProgressBar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as yup from 'yup';
-import { useNavigation } from '@react-navigation/native';
-import { hostname } from '../../../hostname/hostname';
+import {useNavigation} from '@react-navigation/native';
+import {hostname} from '../../../hostname/hostname';
 import axios from 'axios';
 import ProfileImagePickerModal from '../../../components/ImagePicker/ProfileImagePickerModal';
 
@@ -21,7 +21,7 @@ const CreateProfileSetp2: React.FC = () => {
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [pseudo, setPseudo] = useState<string>('');
-  const [validationErrors, setValidationErrors] = useState<{ [key: string]: any }>({});
+  const [validationErrors, setValidationErrors] = useState<{[key: string]: any}>({});
   const [selectedImage, setSelectedImage] = useState<string>('');
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [formDataToSend, setFormDataToSend] = useState<FormData>(new FormData());
@@ -67,12 +67,12 @@ const CreateProfileSetp2: React.FC = () => {
 
   const saveProfile = async (): Promise<void> => {
     setIsLoading(true);
-  
+
     try {
-      await validationSchema.validate({ pseudo }, { abortEarly: false });
-  
-      const profileData = new FormData(); 
-  
+      await validationSchema.validate({pseudo}, {abortEarly: false});
+
+      const profileData = new FormData();
+
       // Ajoutez les autres champs du formulaire
       profileData.append('sexe', sexe);
       profileData.append('firstname', firstName);
@@ -80,7 +80,7 @@ const CreateProfileSetp2: React.FC = () => {
       profileData.append('email', email);
       profileData.append('password', password);
       profileData.append('pseudo', pseudo);
-  
+
       // Vérifiez si une image a été sélectionnée
       if (selectedImage) {
         // Ajoutez l'image sélectionnée à l'objet FormData
@@ -92,7 +92,7 @@ const CreateProfileSetp2: React.FC = () => {
           type: `image/${imageType}`,
         });
       }
-  
+
       const response = await fetch(`${hostname}/users`, {
         method: 'POST',
         body: profileData,
@@ -100,8 +100,15 @@ const CreateProfileSetp2: React.FC = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-  
+
       if (response.ok) {
+        // Effacez les données AsyncStorage avant de naviguer vers l'écran de connexion
+        await AsyncStorage.removeItem('sexe');
+        await AsyncStorage.removeItem('firstname');
+        await AsyncStorage.removeItem('lastname');
+        await AsyncStorage.removeItem('email');
+        await AsyncStorage.removeItem('password');
+
         navigation.navigate('Login');
       } else {
         console.error('Échec de la sauvegarde du profil sur le serveur:', response.status, response.statusText);
@@ -110,7 +117,7 @@ const CreateProfileSetp2: React.FC = () => {
       }
     } catch (error: any) {
       if (error.name === 'ValidationError') {
-        const errors: { [key: string]: string } = {};
+        const errors: {[key: string]: string} = {};
         error.inner.forEach((err: any) => {
           errors[err.path] = err.message;
         });
@@ -122,26 +129,19 @@ const CreateProfileSetp2: React.FC = () => {
       setIsLoading(false);
     }
   };
-  
-  
-  
 
   console.log('selectedImage', selectedImage);
-  
+
   return (
     <View style={styles.mainContainer}>
       <Pressable onPress={openImagePickerModal} style={styles.pictureContainer}>
-        {selectedImage ? (
-          <Image source={{ uri: selectedImage }} style={styles.image} />
-        ) : (
-          <Image style={styles.pressableContainer} source={noGender} />
-        )}
+        {selectedImage ? <Image source={{uri: selectedImage}} style={styles.image} /> : <Image style={styles.pressableContainer} source={noGender} />}
       </Pressable>
 
       {isLoading && <ProgressBar progress={progress} />}
       <View style={styles.cameraContainer}>
         <Pressable onPress={openImagePickerModal}>
-          <Image style={{ width: 30, height: 30 }} source={camera} />
+          <Image style={{width: 30, height: 30}} source={camera} />
         </Pressable>
       </View>
       {modalVisible && <ProfileImagePickerModal onImageSelected={onImageSelectedHandler} modalVisible={modalVisible} setModalVisible={setModalVisible} />}
