@@ -15,6 +15,7 @@ interface Styles {
   textInputStyle: TextStyle;
   nextButtonStyle: ViewStyle;
   nextButtonTextStyle: TextStyle;
+  errorTextStyle: TextStyle;
 }
 
 const styles: Styles = StyleSheet.create<Styles>({
@@ -104,6 +105,10 @@ const styles: Styles = StyleSheet.create<Styles>({
   nextButtonTextStyle: {
     color: '#fff',
     fontWeight: '600',
+  },
+  errorTextStyle: {
+    color: 'red',
+    marginBottom: 5,
   },
 });
 
