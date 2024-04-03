@@ -63,7 +63,7 @@ const verifyPassword = async (req: Request, res: Response): Promise<void> => {
 
       res.status(200).send({
         authToken: token,
-        user: req.body.user,
+        //user: req.body.user,
         message: "Connexion réussie",
       });
     } else {
@@ -118,18 +118,22 @@ const verifyToken = async (
             reject(new Error("Non autorisé"));
             return;
           }
+          // Ajoutez l'ID de l'utilisateur à la demande (req)
           (req as any).user = { _id: decoded.sub };
           resolve();
         }
       });
     });
 
+    // Si l'autorisation est accordée, retournez l'ID de l'utilisateur
+    const userId = (req as any).user._id;
     next();
   } catch (err) {
     console.error(err);
     res.status(500).send("Erreur lors de la vérification du jeton");
   }
 };
+
 
 const expiredSessionToken = async (req: Request, res: Response): Promise<void> => {
   try {

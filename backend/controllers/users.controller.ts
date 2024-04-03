@@ -7,54 +7,58 @@ import { sendEmail } from "../utils/requestMailVerification";
 
 class UserController {
   static async create(req: Request, res: Response): Promise<void> {
-    try {
-      // Vérifiez si req.file existe avant d'accéder à req.file.filename
-      const profileImage = req.file ? req.file.filename : undefined;
-  
-      const { pseudo, email, password, firstName, lastName, sexe } = req.body;
-  
-      const newUser = await User.create({
-        pseudo,
-        email,
-        password,
-        firstName,
-        lastName,
-        sexe,
-        profileImage,
-        role: "user",
-      });
-  
-      // Répondre avec le nouvel utilisateur créé
-      res.status(201).json(newUser);
-    } catch (error) {
-      console.error("Erreur lors de la création de l'utilisateur :", error);
-      res.status(500).json({ message: "Erreur lors de la création de l'utilisateur" });
-    }
+  try {
+    // Vérifiez si req.file existe avant d'accéder à req.file.filename
+    const profileImage = req.file ? req.file.filename : undefined;
+
+    const { pseudo, email, password, firstName, lastName, sexe } = req.body;
+
+    const newUser = await User.create({
+      pseudo,
+      email,
+      password,
+      firstName,
+      lastName,
+      sexe,
+      profileImage,
+      role: "user",
+    });
+
+    // Répondre avec le nouvel utilisateur créé
+    res.status(201).json(newUser);
+  } catch (error) {
+    console.error("Erreur lors de la création de l'utilisateur :", error);
+    res.status(500).json({ message: "Erreur lors de la création de l'utilisateur" });
   }
+}
+
   
-  
 
 
-  static async getUserById(req: Request, res: Response): Promise<void> {
-    try {
-      const userId = req.params.id;
-      const user = await User.findById(userId);
-
-      if (!user) {
-        res.status(404).json({ message: "Utilisateur non trouvé" });
-        return;
-      }
-      res.status(200).json(user);
-    } catch (error) {
-      console.error(
-        "Erreur lors de la récupération de l'utilisateur par ID :",
-        error
-      );
-      res.status(500).json({
-        message: "Erreur lors de la récupération de l'utilisateur par ID",
-      });
+static async getUserProfile(req: Request, res: Response): Promise<void> {
+  try {
+    // Récupérer l'ID de l'utilisateur à partir du middleware verifyToken
+    const userId = (req as any).user._id;
+    const user = await User.findOne({ _id: userId }).select('-password');
+    
+    if (!user) {
+      res.status(404).json({ message: "Utilisateur non trouvé" });
+      return;
     }
+    res.status(200).json(user); 
+  } catch (error) {
+    console.error(
+      "Erreur lors de la récupération de l'utilisateur par ID :",
+      error
+    );
+    res.status(500).json({
+      message: "Erreur lors de la récupération de l'utilisateur par ID",
+    });
   }
+}
+
+
+
 
   static async getAllUsers(req: Request, res: Response): Promise<void> {
     try {

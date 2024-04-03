@@ -11,7 +11,7 @@ import {AuthProvider, useAuth} from './src/context/AuthContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Home from './src/screens/home/Home';
 import DrawerNavigator from './src/components/DrawerNavigator';
-import {UserProvider} from './src/context/UserContext';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -87,9 +87,9 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <AuthProvider>
-      <UserProvider>
+
         <AppContent />
-      </UserProvider>
+
     </AuthProvider>
   );
 };
