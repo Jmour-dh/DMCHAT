@@ -45,8 +45,8 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
     try {
       await AsyncStorage.setItem('userToken', token);
       await AsyncStorage.setItem('userId', userId);
-      console.log('dhia',isLoggedIn);
-      
+      console.log('dhia', isLoggedIn);
+
       setIsLoggedIn(true);
     } catch (error) {
       console.error("Erreur lors de la connexion de l'utilisateur:", error);
@@ -67,7 +67,6 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
 
   // Crée une valeur de contexte memoisée pour éviter les rendus inutiles
   const value = useMemo(() => ({isLoggedIn, login, logout}), [isLoggedIn]);
-  console.log('isLoggedIn', isLoggedIn);
 
   // Rendu du fournisseur d'authentification avec le contexte de valeur fourni aux enfants
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
