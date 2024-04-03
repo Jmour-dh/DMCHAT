@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {View, Text, Image, TextInput, TouchableOpacity, SafeAreaView, Alert} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState } from 'react';
+import { View, Text, Image, TextInput, TouchableOpacity, SafeAreaView, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import styles from './Login.styles';
 import logo from '../../assets/images/logo_DMCHAT.png';
-import {hostname} from '../../hostname/hostname';
+import { hostname } from '../../hostname/hostname';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useAuth} from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import * as yup from 'yup';
 import axios from 'axios';
 
@@ -13,7 +13,7 @@ const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const Login: React.FC = () => {
   const navigation = useNavigation();
-  const {login} = useAuth();
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState<string>('');
@@ -27,7 +27,7 @@ const Login: React.FC = () => {
   const handleLogin = async () => {
     try {
       // Validation des champs de formulaire
-      await handleValidationSchema.validate({email, password});
+      await handleValidationSchema.validate({ email, password });
 
       // Effectuer la requête POST pour la connexion
       const response = await axios.post(`${hostname}/login`, {
@@ -37,20 +37,14 @@ const Login: React.FC = () => {
 
       // Vérifier la réponse de l'API
       if (response.status === 200) {
-        // Récupérer le token d'authentification et l'ID de l'utilisateur depuis la réponse de l'API
-        const {authToken, user} = response.data;
-        console.log('data', response.data);
+        // Récupérer le token d'authentification depuis la réponse de l'API
+        const { authToken } = response.data;
 
-        // Stocker le token d'authentification et l'ID de l'utilisateur dans AsyncStorage
-        await AsyncStorage.setItem('authToken', authToken);
-        await AsyncStorage.setItem('userId', user._id);
-        await AsyncStorage.setItem('pseudo', user.pseudo);
-        await AsyncStorage.setItem('profileImage', user.profileImage);
+        // Stocker le token d'authentification dans AsyncStorage et se connecter
+        await AsyncStorage.setItem('userToken', authToken);
+        await login(authToken);
 
-        // Appeler la fonction login du contexte d'authentification pour mettre à jour l'état d'authentification
-        login(authToken, user._id); // Utilisation de la fonction login du contexte d'authentification
-
-        // Connexion réussie, rediriger l'utilisateur vers la page de profil ou faire toute autre action nécessaire
+        // Connexion réussie, rediriger l'utilisateur vers la page de profil ou toute autre action nécessaire
         console.log('Connexion réussie !');
       } else {
         // Afficher un message d'erreur en cas de problème avec la connexion

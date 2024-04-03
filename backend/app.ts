@@ -31,7 +31,7 @@ const reactIndexFile = path.join(
 );
 
 if (fs.existsSync(reactIndexFile)) {
-  app.use(express.static(path.join(__dirname, "..", "..", "frontend")));
+  //app.use(express.static(path.join(__dirname, "..", "..", "frontend")));
 
   app.get("*", (req: Request, res: Response) => {
     res.sendFile(reactIndexFile);

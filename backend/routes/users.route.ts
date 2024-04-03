@@ -21,8 +21,8 @@ router.post(
   UserController.create
 );
 
-router.get("/users/:id", verifyToken, UserController.getUserById);
-router.get("/users", verifyToken, UserController.getAllUsers);
+router.get("/users", verifyToken, UserController.getUserProfile);
+router.get("/allUsers", verifyToken, UserController.getAllUsers);
 router.put("/users/:id", verifyToken, UserController.updateUser);
 router.put("/updatePassword/:id", verifyToken, hashPassword, UserController.updatePassword);
 router.delete("/users/:id", verifyToken, UserController.deleteUser);
