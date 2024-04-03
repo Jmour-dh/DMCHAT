@@ -28,26 +28,26 @@ const Login: React.FC = () => {
     try {
       // Validation des champs de formulaire
       await handleValidationSchema.validate({email, password});
-  
+
       // Effectuer la requête POST pour la connexion
       const response = await axios.post(`${hostname}/login`, {
         email,
         password,
       });
-  
+
       // Vérifier la réponse de l'API
       if (response.status === 200) {
         // Récupérer le token d'authentification et l'ID de l'utilisateur depuis la réponse de l'API
         const {authToken, user} = response.data;
         console.log('data', response.data);
-  
+
         // Stocker le token d'authentification et l'ID de l'utilisateur dans AsyncStorage
         await AsyncStorage.setItem('authToken', authToken);
         await AsyncStorage.setItem('userId', user._id);
-  
+
         // Appeler la fonction login du contexte d'authentification pour mettre à jour l'état d'authentification
         login(authToken, user._id); // Utilisation de la fonction login du contexte d'authentification
-  
+
         // Connexion réussie, rediriger l'utilisateur vers la page de profil ou faire toute autre action nécessaire
         console.log('Connexion réussie !');
         navigation.navigate('Home');
@@ -73,7 +73,6 @@ const Login: React.FC = () => {
       }
     }
   };
-  
 
   const handleRegisterPress = () => {
     navigation.navigate('Register');
