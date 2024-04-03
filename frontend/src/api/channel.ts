@@ -1,11 +1,12 @@
 import axios from 'axios';
 import env from 'react-dotenv'
+import { hostname } from '../hostname/hostname';
 
 export const createChannel = async (data:string) => {
 
    return await axios({
       method: 'post',
-      url: `http://localhost:3000/channel`,
+      url: `${hostname}/channel`,
       data: data
    })
    .then((res) => {
@@ -22,7 +23,7 @@ export const getAll = async () => {
 
     return await axios({
        method: 'get',
-       url: `http://localhost:3000/channel`,
+       url: `${hostname}/channel`,
     })
     .then((res) => {
         console.log(res.data)
@@ -37,7 +38,7 @@ export const getOneChannel = async (id:number) => {
 
     return await axios({
        method: 'get',
-       url: `http://localhost:3000/channel/${id}`,
+       url: `${hostname}/channel/${id}`,
     })
     .then((res) => {
         console.log(res.data)
@@ -52,7 +53,7 @@ export const deleteChannel = async (id) => {
 
     return await axios({
        method: 'delete',
-       url: `http://localhost:3000/channel/${id}`,
+       url: `${hostname}/channel/${id}`,
     })
     .then((res) => {
         console.log(res.data)
@@ -67,7 +68,7 @@ export const updateChannel = async (id:number , data:string) => {
 
     return await axios({
        method: 'put',
-       url: `http://localhost:3000/channel/${id}`,
+       url: `${hostname}/channel/${id}`,
        data:data
     })
     .then((res) => {
