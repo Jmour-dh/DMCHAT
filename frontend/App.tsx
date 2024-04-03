@@ -11,6 +11,7 @@ import {AuthProvider, useAuth} from './src/context/AuthContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Home from './src/screens/home/Home';
 import DrawerNavigator from './src/components/DrawerNavigator';
+import {UserProvider} from './src/context/UserContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -60,9 +61,11 @@ const AppContent: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator>
         {isLoggedIn ? (
-          <Stack.Screen name="Drawer" component={DrawerNavigator} options={{headerShown: false}} />
+          <Stack.Group screenOptions={{headerShown: false}}>
+            <Stack.Screen name="Drawer" component={DrawerNavigator} />
+          </Stack.Group>
         ) : (
-          <>
+          <Stack.Group>
             <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
             <Stack.Screen name="Register" component={Register} options={{headerShown: false}} />
             <Stack.Screen name="VerifyEmailCode" component={VerifyEmailCode} options={{headerShown: false}} />
@@ -74,7 +77,7 @@ const AppContent: React.FC = () => {
                 headerLeft: () => headerLeft(navigation),
               })}
             />
-          </>
+          </Stack.Group>
         )}
       </Stack.Navigator>
     </NavigationContainer>
@@ -84,7 +87,9 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <AuthProvider>
-      <AppContent />
+      <UserProvider>
+        <AppContent />
+      </UserProvider>
     </AuthProvider>
   );
 };

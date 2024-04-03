@@ -45,7 +45,6 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
     try {
       await AsyncStorage.setItem('userToken', token);
       await AsyncStorage.setItem('userId', userId);
-      console.log('dhia', isLoggedIn);
 
       setIsLoggedIn(true);
     } catch (error) {

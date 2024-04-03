@@ -21,7 +21,6 @@ const LogoutButton: React.FC = () => {
         // Le token a expiré
         console.log('Token expiré. Déconnexion...');
         logout();
-        navigation.navigate('Login');
       } else {
         // Le token n'a pas encore expiré, continuez avec la déconnexion
         const response = await fetch(`${hostname}/logout`, {
@@ -34,7 +33,6 @@ const LogoutButton: React.FC = () => {
         if (response.ok) {
           console.log('Token supprimé de AsyncStorage');
           logout();
-          navigation.navigate('Login');
         } else {
           console.error('Erreur de déconnexion');
         }

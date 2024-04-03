@@ -44,18 +44,19 @@ const Login: React.FC = () => {
         // Stocker le token d'authentification et l'ID de l'utilisateur dans AsyncStorage
         await AsyncStorage.setItem('authToken', authToken);
         await AsyncStorage.setItem('userId', user._id);
+        await AsyncStorage.setItem('pseudo', user.pseudo);
+        await AsyncStorage.setItem('profileImage', user.profileImage);
 
         // Appeler la fonction login du contexte d'authentification pour mettre à jour l'état d'authentification
         login(authToken, user._id); // Utilisation de la fonction login du contexte d'authentification
 
         // Connexion réussie, rediriger l'utilisateur vers la page de profil ou faire toute autre action nécessaire
         console.log('Connexion réussie !');
-        navigation.navigate('Home');
       } else {
         // Afficher un message d'erreur en cas de problème avec la connexion
         Alert.alert('Erreur de connexion', 'Veuillez vérifier vos identifiants et réessayer.');
       }
-    } catch (error) {
+    } catch (error: any) {
       // Gérer les erreurs de validation des champs de formulaire
       if (error.name === 'ValidationError') {
         error.inner.forEach((err: any) => {
